@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Ionic Crud-Todos
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+ <ion-content>
+  <ion-list>
+    <ng-container *ngIf="!todos || todos.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="text-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
+    <ion-item-sliding *ngFor="let todo of todos">
+      <ion-item lines="inset" button [routerLink]="['/details', todo.id]">
+        <ion-label>
+          {{ todo.task }}
+        </ion-label>
+        <ion-note slot="end" color="primary">{{ todo.priority }}</ion-note>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove(item)" color="secondary">
+          Check
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ </ion-content>
