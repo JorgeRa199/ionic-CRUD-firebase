@@ -8,4 +8,4 @@
 
 ## FIREBASE DB
 
-![DB]([https://i.ibb.co/s58hqws/Firebase.png](https://i.ibb.co/s58hqws/Firebase.png)
+![Db](https://i.ibb.co/s58hqws/Firebase.png)
