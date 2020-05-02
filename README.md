@@ -1,8 +1,8 @@
 # CRUD using Ionic and Firebase
 
-1.  Clone or dowwnload this repository
-2.  npm install from you console
-3.  Write your firebase credentials *in environments/environment.ts*
+1.  Clone or download this repository
+2.  npm install from your console
+3.  Write your firebase credentials in *environments/environment.ts*
 
 *Make sure that you have been installed ionic*
 
